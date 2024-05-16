@@ -1,0 +1,27 @@
+export const Colors = {
+  White: "#ffffff",
+  Black: "#333333",
+  Primary: "#404040",
+  Primary2: "#006eb6",
+  Background: "#262F38",
+  Red: "#f44336",
+  Green: "#0EA60E",
+  Brown: "#927D60",
+  DarkGray: "#444444",
+  PayneGray: "#586F7C",
+  LightGray: "#eeeeee",
+  DARK: {
+    BG: "#262F38",
+    COLOR: "#ffffff",
+    SB: "#24303C",
+    HOVER: "#C25423",
+    BUTTON: "#C25423",
+  },
+  LIGHT: {
+    BG: "#ffffff",
+    COLOR: "#444444",
+    SB: "#ffffff",
+    HOVER: "#89dcff",
+    BUTTON: "#006eb6",
+  },
+};
