@@ -1,17 +1,26 @@
 import styled from "styled-components";
+import Summary from "../components/nonograms/Summary";
 import Game from "../components/nonograms/Game";
+import { CommonProps } from "../navigations";
+import Explanation from "../components/nonograms/Explanation";
+import { useState } from "react";
 
 const Layout = styled.div`
+  padding: 100px 0;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const Nonograms = () => {
+const Nonograms = (props: CommonProps.ComponentProps) => {
+  const { navigation } = props;
+
   return (
     <Layout>
-      <Game />
+      <Summary />
+      <Explanation />
+      <Game navigation={navigation} />
     </Layout>
   );
 };

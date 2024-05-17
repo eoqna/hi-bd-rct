@@ -23,7 +23,7 @@ const Navigations = () => {
       <ContentLayout>
         <Routes>
           <Route index element={<Congratulation navigation={navigation} />} />
-          <Route path="/nonograms" element={<Nonograms />} />
+          <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
         </Routes>
       </ContentLayout>
     </Layout>
