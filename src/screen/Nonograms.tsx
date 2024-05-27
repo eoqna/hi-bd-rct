@@ -3,7 +3,6 @@ import Summary from "../components/nonograms/Summary";
 import Game from "../components/nonograms/Game";
 import { CommonProps } from "../navigations";
 import Explanation from "../components/nonograms/Explanation";
-import { useState } from "react";
 
 const Layout = styled.div`
   padding: 100px 0;

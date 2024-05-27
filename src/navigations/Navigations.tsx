@@ -1,8 +1,8 @@
 import { Route, Routes, useNavigate } from "react-router";
 import styled from "styled-components";
 import Nonograms from "../screen/Nonograms";
-import { Colors } from "../assets/css/colors";
 import Congratulation from "../screen/Congratulation";
+import { Colors } from "../assets/css/colors";
 
 const Layout = styled.div`
   width: 100%;

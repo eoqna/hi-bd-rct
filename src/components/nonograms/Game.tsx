@@ -41,7 +41,7 @@ const Td = styled.td<{ $clicked: string }>`
   width: 40px;
   height: 40px;
   text-align: center;
-  border: 1px solid ${Colors.Black};
+  border: 1px solid ${(props) => props.$clicked === "1" ? Colors.DarkGray : Colors.Black};
   color: ${(props) => props.$clicked === "1" ? Colors.Black : (props.$clicked === "0" ? Colors.White : Colors.DarkGray)};
   background: ${(props) => props.$clicked === "1" ? Colors.Black : (props.$clicked === "0" ? Colors.White : Colors.DarkGray)};
   cursor: pointer;

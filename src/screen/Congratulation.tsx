@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { CommonProps } from "../navigations";
 import styled from "styled-components";
 import { Colors } from "../assets/css/colors";
 import image1 from "../assets/imgs/leaveMouse.png";
 import image2 from "../assets/imgs/enterMouse.jpg";
+import background from "../assets/imgs/background.jpg";
 
 const Layout = styled.div`
   width: 100%;
@@ -12,6 +13,8 @@ const Layout = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: no-repeat center center url(${background});
+  background-size : cover !IMPORTANT;
 `;
 
 const ContentLayout = styled.div`
@@ -23,7 +26,7 @@ const ContentLayout = styled.div`
 `;
 
 const Text = styled.h2`
-  font-size: 3.5vw;
+  font-size: 4vw;
   font-weight: bold;
   color: ${Colors.White};
 `;
