@@ -10,19 +10,23 @@ export const top: TextProps[] = [
   },
   {
     text: "인",
-    color: "orange",
+    color: "red",
   },
   {
     text: "의",
-    color: "yellow",
+    color: "orange",
   },
   {
     text: "생",
-    color: "green",
+    color: "yellow",
   },
   {
     text: "일",
-    color: "blue",
+    color: "yellow",
+  },
+  {
+    text: "을",
+    color: "green",
   },
 ];
 
@@ -37,14 +41,26 @@ export const bottom: TextProps[] = [
   },
   {
     text: "합",
-    color: "blue",
+    color: "navy",
   },
   {
     text: "니",
-    color: "blue",
+    color: "navy",
   },
   {
     text: "다",
-    color: "blue",
+    color: "navy",
+  },
+  {
+    text: ">",
+    color: "purple",
+  },
+  {
+    text: "_",
+    color: "purple",
+  },
+  {
+    text: "<",
+    color: "purple",
   },
 ]

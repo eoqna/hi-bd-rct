@@ -32,10 +32,11 @@ const TextLayout = styled.div`
   align-items: center;
 `;
 
-const Text = styled.span<{ $color: string }>`
+const Text = styled.span<{ $color: string, $text: string }>`
   font-size: 5vw;
   font-weight: bold;
   color: ${(props) => props.$color};
+  margin-right: ${(props) => props.$text === "의" && "20px"};
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: ${Colors.Black};
 `;
@@ -76,7 +77,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickImg = useCallback(() => {
-    navigation("/nonograms");
+    navigation("/start");
   }, []);
 
   const onMouseEnterImg = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
@@ -97,7 +98,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
       <ContentLayout className="title-layout">
         <TextLayout>
           {top.map((item) => (
-            <Text key={item.text} $color={item.color}>{item.text}</Text>
+            <Text key={item.text} $color={item.color} $text={item.text}>{item.text}</Text>
           ))}
         </TextLayout>
         <ImgLayout>
@@ -112,7 +113,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
         </ImgLayout>
         <TextLayout>
           {bottom.map((item) => (
-            <Text key={item.text} $color={item.color}>{item.text}</Text>
+            <Text key={item.text} $color={item.color} $text={item.text}>{item.text}</Text>
           ))}
         </TextLayout>
       </ContentLayout>

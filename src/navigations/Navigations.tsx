@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Nonograms from "../screen/Nonograms";
 import Congratulation from "../screen/Congratulation";
 import { Colors } from "../assets/css/colors";
+import Start from "../screen/Start";
 
 const Layout = styled.div`
   width: 100%;
@@ -23,6 +24,7 @@ const Navigations = () => {
       <ContentLayout>
         <Routes>
           <Route index element={<Congratulation navigation={navigation} />} />
+          <Route path="start" element={<Start />}/>
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
         </Routes>
       </ContentLayout>
