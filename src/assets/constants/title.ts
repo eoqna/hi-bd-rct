@@ -6,11 +6,11 @@ interface TextProps {
 export const top: TextProps[] = [
   {
     text: "해",
-    color: "red",
+    color: "yellow",
   },
   {
     text: "인",
-    color: "red",
+    color: "yellow",
   },
   {
     text: "의",
@@ -18,11 +18,11 @@ export const top: TextProps[] = [
   },
   {
     text: "생",
-    color: "yellow",
+    color: "red",
   },
   {
     text: "일",
-    color: "yellow",
+    color: "red",
   },
   {
     text: "을",

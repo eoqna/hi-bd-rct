@@ -4,6 +4,7 @@ import Nonograms from "../screen/Nonograms";
 import Congratulation from "../screen/Congratulation";
 import { Colors } from "../assets/css/colors";
 import Start from "../screen/Start";
+import Third from "../screen/Third";
 
 const Layout = styled.div`
   width: 100%;
@@ -24,8 +25,9 @@ const Navigations = () => {
       <ContentLayout>
         <Routes>
           <Route index element={<Congratulation navigation={navigation} />} />
-          <Route path="start" element={<Start />}/>
+          <Route path="start" element={<Start navigation={navigation} />}/>
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
+          <Route path="/third" element={<Third navigation={navigation} />} />
         </Routes>
       </ContentLayout>
     </Layout>

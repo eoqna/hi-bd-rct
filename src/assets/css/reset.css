@@ -57,3 +57,14 @@ input[type="number"]::-webkit-inner-spin-button {
 		-moz-appearance: none;
 		appearance: none;
 }
+body {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  font-family: nanumSquareNeo;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar, .inner-wrapper::-webkit-scrollbar {
+  display: none;
+}

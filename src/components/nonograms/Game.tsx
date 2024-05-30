@@ -17,7 +17,7 @@ const Title = styled.p`
   text-align: center;
   font-size: 4vmin;
   font-weight: bold;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 `;
 
 const TableLayout = styled.div`
@@ -50,7 +50,25 @@ const Td = styled.td<{ $clicked: string }>`
 const Text = styled.h1<{ $text: string }>`
   font-size: 4vmin;
   font-weight: bold;
+  margin-top: 1vw;
   color: ${(props) => props.$text === "땡!" ? Colors.Red : Colors.Green};
+`;
+
+const ResetButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  font-weight: bold;
+  margin: 2vw 0 3vw;
+  border: 4px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  &: hover {
+    background: ${Colors.Green};
+    color: ${Colors.White};
+  }
 `;
 
 const catAnswer = [
@@ -131,8 +149,12 @@ const Game = (props: CommonProps.ComponentProps) => {
   }, [tableData]);
 
   const onClickClearButton = useCallback(() => {
-    setTableData(init);
-    setResult("땡!");
+    const result = confirm("엥? 진짜?");
+
+    if( result ) {
+      setTableData(init);
+      setResult("땡!");
+    }
   }, [tableData]);
 
   useEffect(() => {
@@ -141,7 +163,7 @@ const Game = (props: CommonProps.ComponentProps) => {
     }
 
     if( JSON.stringify(tableData) === JSON.stringify(realAnswer) ) {
-      navigation("/");
+      navigation("/third");
     }
   }, [tableData, result]);
 
@@ -170,7 +192,7 @@ const Game = (props: CommonProps.ComponentProps) => {
       </TableLayout>
       <br/>
       <Text $text={result}>{result}</Text>
-      <button onClick={onClickClearButton}>Reset</button>
+      <ResetButton onClick={onClickClearButton}>Reset</ResetButton>
     </Layout>
   );
 };
