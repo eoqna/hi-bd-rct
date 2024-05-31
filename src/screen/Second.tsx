@@ -8,12 +8,12 @@ import {
   Layout, Text, 
   TextLayout,
 } from "../assets/css/saw";
+import { Colors } from "../assets/css/colors";
 
-const Start = (props: CommonProps.ComponentProps) => {
+const Second = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
-  const [ text, setText ] = useState("싫다");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,13 +65,18 @@ const Start = (props: CommonProps.ComponentProps) => {
 
   const onClickReject = useCallback(() => {
     setTimeout(() => {
-      setText("좋다");
+      const agreeButton = document.querySelector(".agree_button") as HTMLElement;
+      const rejectButton = document.querySelector(".reject_button") as HTMLElement;
+
+      rejectButton.style.display = "none";
+      agreeButton.style.background = Colors.DARK.HOVER;
+      agreeButton.style.color = Colors.White;
 
       setTimeout(() => {
         navigation("/nonograms");
       }, 1000);
     }, 2000);
-  }, [text]);
+  }, []);
 
   return (
     <Layout>
@@ -80,14 +85,14 @@ const Start = (props: CommonProps.ComponentProps) => {
         <ContentLayout>
           <TextLayout>
             <Text className="first_text">
-              해인, 금메달 3개를 모으면 보물이 있는 위치를 알려주도록하지.
+              첫 번째 문제를 용케도 풀어냈군. 칭찬해주지
             </Text>
             <Text className="second_text">
-              싫으면 하지말던가?
+              두 번째 게임을 시작하지, 준비됐나?
             </Text>
             <ButtonLayout className="button_layout">
-              <Button $type="left" onClick={onClickAgree}>좋다</Button>
-              <Button $type="right" onClick={onClickReject}>{text}</Button>
+              <Button $type="left" className="agree_button" onClick={onClickAgree}>좋다</Button>
+              <Button $type="right" className="reject_button" onClick={onClickReject}>싫다</Button>
             </ButtonLayout>
           </TextLayout>
         </ContentLayout>
@@ -96,4 +101,4 @@ const Start = (props: CommonProps.ComponentProps) => {
   );
 };
 
-export default Start;
+export default Second;

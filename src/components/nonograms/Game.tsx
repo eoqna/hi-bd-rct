@@ -163,7 +163,7 @@ const Game = (props: CommonProps.ComponentProps) => {
     }
 
     if( JSON.stringify(tableData) === JSON.stringify(realAnswer) ) {
-      navigation("/third");
+      navigation("/second");
     }
   }, [tableData, result]);
 
