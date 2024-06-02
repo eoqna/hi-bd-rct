@@ -5,10 +5,11 @@ import { CommonProps } from "../navigations";
 import { 
   Button, ButtonLayout, 
   ContentLayout, Img, 
-  Layout, Text, 
+  Layout, Medal, Text, 
   TextLayout,
 } from "../assets/css/saw";
 import { Colors } from "../assets/css/colors";
+import { thirdMedal } from "../assets/constants/medal";
 
 const Third = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
@@ -60,7 +61,7 @@ const Third = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickAgree = useCallback(() => {
-    navigation("/nonograms");
+    navigation("/endding");
   }, []);
 
   const onClickReject = useCallback(() => {
@@ -73,7 +74,7 @@ const Third = (props: CommonProps.ComponentProps) => {
       agreeButton.style.color = Colors.White;
 
       setTimeout(() => {
-        navigation("/nonograms");
+        navigation("/endding");
       }, 1000);
     }, 2000);
   }, []);
@@ -83,16 +84,19 @@ const Third = (props: CommonProps.ComponentProps) => {
       <Img src={img} alt="saw" />
       {show &&
         <ContentLayout>
+          {thirdMedal.map((item) => (
+            <Medal key={item.right} $right={item.right} src={item.src} alt="empty medal" />
+          ))}
           <TextLayout>
             <Text className="first_text">
               이제 마지막 문제만 남았다.
             </Text>
             <Text className="second_text">
-              쫄?
+              그럼 마지막 문제를 시작하도록 하지.
             </Text>
             <ButtonLayout className="button_layout">
-              <Button $type="left" className="agree_button" onClick={onClickAgree}>?</Button>
-              <Button $type="right" className="reject_button" onClick={onClickReject}>쫄;</Button>
+              <Button $type="left" className="agree_button" onClick={onClickAgree}>좋다</Button>
+              <Button $type="right" className="reject_button" onClick={onClickReject}>그만할래..</Button>
             </ButtonLayout>
           </TextLayout>
         </ContentLayout>

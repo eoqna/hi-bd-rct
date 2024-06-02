@@ -5,10 +5,11 @@ import { CommonProps } from "../navigations";
 import { 
   Button, ButtonLayout, 
   ContentLayout, Img, 
-  Layout, Text, 
+  Layout, Medal, Text, 
   TextLayout,
 } from "../assets/css/saw";
 import { Colors } from "../assets/css/colors";
+import { secondMedal } from "../assets/constants/medal";
 
 const Second = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
@@ -60,7 +61,7 @@ const Second = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickAgree = useCallback(() => {
-    navigation("/nonograms");
+    navigation("/third");
   }, []);
 
   const onClickReject = useCallback(() => {
@@ -73,7 +74,7 @@ const Second = (props: CommonProps.ComponentProps) => {
       agreeButton.style.color = Colors.White;
 
       setTimeout(() => {
-        navigation("/nonograms");
+        navigation("/third");
       }, 1000);
     }, 2000);
   }, []);
@@ -83,6 +84,9 @@ const Second = (props: CommonProps.ComponentProps) => {
       <Img src={img} alt="saw" />
       {show &&
         <ContentLayout>
+          {secondMedal.map((item) => (
+            <Medal key={item.right} $right={item.right} src={item.src} alt="empty medal" />
+          ))}
           <TextLayout>
             <Text className="first_text">
               첫 번째 문제를 용케도 풀어냈군. 칭찬해주지

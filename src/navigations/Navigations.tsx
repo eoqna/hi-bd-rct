@@ -6,6 +6,7 @@ import { Colors } from "../assets/css/colors";
 import Start from "../screen/Start";
 import Second from "../screen/Second";
 import Third from "../screen/Third";
+import Endding from "../screen/Endding";
 
 const Layout = styled.div`
   width: 100%;
@@ -30,6 +31,7 @@ const Navigations = () => {
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
           <Route path="/second" element={<Second navigation={navigation} />} />
           <Route path="/third" element={<Third navigation={navigation} />} />
+          <Route path="/endding" element={<Endding navigation={navigation} />} />
         </Routes>
       </ContentLayout>
     </Layout>

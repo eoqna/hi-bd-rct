@@ -76,3 +76,12 @@ export const Button = styled.button<{ $type: string }>`
     color: ${Colors.White};
   }
 `;
+
+export const Medal = styled.img<{ $right: number }>`
+  position: absolute;
+  top: 1vh;
+  background: ${Colors.Background};
+  right: ${(props) => props.$right}px;
+  width: 70px;
+  height: 70px;
+`;
