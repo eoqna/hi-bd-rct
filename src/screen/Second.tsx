@@ -61,7 +61,7 @@ const Second = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickAgree = useCallback(() => {
-    navigation("/third");
+    navigation("/location");
   }, []);
 
   const onClickReject = useCallback(() => {
@@ -74,7 +74,7 @@ const Second = (props: CommonProps.ComponentProps) => {
       agreeButton.style.color = Colors.White;
 
       setTimeout(() => {
-        navigation("/third");
+        navigation("/location");
       }, 1000);
     }, 2000);
   }, []);

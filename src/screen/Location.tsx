@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { CommonProps } from "../navigations";
 import { Colors } from "../assets/css/colors";
 import Message from "../components/location/Message";
-import ButtonPad from "../components/location/ButtonPad";
+import KeyPad from "../components/location/KeyPad";
 
 const Layout = styled.div`
   width: 100%;
@@ -14,14 +14,14 @@ const Layout = styled.div`
 `;
 
 const BackgroundLayout = styled.div`
-  width: 50%;
+  width: 30%;
   height: 90%;
   display: flex;
   flex-direction: column;
   background: ${Colors.LightGray};
 `;
 
-const SecondGame = (props: CommonProps.ComponentProps) => {
+const Location = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
   
   return (
@@ -29,13 +29,13 @@ const SecondGame = (props: CommonProps.ComponentProps) => {
       <BackgroundLayout>
         <Message>
         </Message>
-        <ButtonPad>
+        <KeyPad>
           
-        </ButtonPad>
+        </KeyPad>
       </BackgroundLayout>
       
     </Layout>
   );
 };
 
-export default SecondGame;
+export default Location;

@@ -7,7 +7,7 @@ import Start from "../screen/Start";
 import Second from "../screen/Second";
 import Third from "../screen/Third";
 import Endding from "../screen/Endding";
-import SecondGame from "../screen/SecondGame";
+import Location from "../screen/Location";
 
 const Layout = styled.div`
   width: 100%;
@@ -31,7 +31,7 @@ const Navigations = () => {
           <Route path="start" element={<Start navigation={navigation} />}/>
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
           <Route path="/second" element={<Second navigation={navigation} />} />
-          <Route path="/second-game" element={<SecondGame navigation={navigation} />} />
+          <Route path="/location" element={<Location navigation={navigation} />} />
           <Route path="/third" element={<Third navigation={navigation} />} />
           <Route path="/endding" element={<Endding navigation={navigation} />} />
         </Routes>
