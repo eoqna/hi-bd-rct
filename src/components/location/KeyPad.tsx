@@ -4,7 +4,7 @@ import { button } from "../../assets/constants/button";
 
 const ButtonLayout = styled.div`
   width: 100%;
-  height: 70%;
+  height: 60%;
   background: ${Colors.White};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

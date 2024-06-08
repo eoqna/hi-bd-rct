@@ -27,7 +27,7 @@ const Location = (props: CommonProps.ComponentProps) => {
   return (
     <Layout>
       <BackgroundLayout>
-        <Message>
+        <Message navigation={navigation}>
         </Message>
         <KeyPad>
           
