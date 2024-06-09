@@ -3,6 +3,8 @@ import { Colors } from "../../assets/css/colors";
 import profile from "../../assets/imgs/profile.png";
 import { useCallback, useRef, useState } from "react";
 import { CommonProps } from "../../navigations";
+import { mdiArrowUp } from "@mdi/js";
+import Icon from "@mdi/react";
 
 const MessageLayout = styled.div`
   width: 100%;
@@ -50,7 +52,7 @@ const MessageBoxLayout = styled.div`
   flex-direction: column;
 `;
 
-const MessageBox = styled.p<{ $type: string }>`
+const MessageBox = styled.div<{ $type: string }>`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -89,12 +91,19 @@ const MessageInput = styled.input`
 
 const SendButton = styled.button`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5vw;
+  height: 1.5vw;
   top: 50%;
-  right: 10px;
+  transform: translate3d(-50%, -50%, 0);
+  right: 0;
   background: #39C75B;
   border: 1px solid #39C75B;
   border-radius: 50%;
   color: ${Colors.White};
+  cursor: pointer;
 `;
 
 const Message = (props: CommonProps.ComponentProps) => {
@@ -103,20 +112,20 @@ const Message = (props: CommonProps.ComponentProps) => {
   const answerRef = useRef<HTMLInputElement>(null);
 
   const submit = useCallback(() => {
-    if( answer !== "LOTTE MART") {
+    if( answer.toUpperCase() !== "LOTTE MART") {
       setAnswer("");
       answerRef.current?.focus();
       return;
     }
 
     navigation("/third");
-  }, []);
+  }, [answer]);
 
   return (
     <MessageLayout>
       <Profile>
         <ProfileImg src={profile} alt="Profile Image" />
-        <UserName>신대범</UserName>
+        <UserName>대범❤️</UserName>
       </Profile>
       <ContentLayout>
         <MessageBoxLayout>
@@ -127,7 +136,7 @@ const Message = (props: CommonProps.ComponentProps) => {
           </MessageBox>
           <MessageBox $type="receive">
             <Text $type="receive">
-              568836178<br/>
+              568836278<br/>
               331121131
             </Text>
           </MessageBox>
@@ -140,7 +149,9 @@ const Message = (props: CommonProps.ComponentProps) => {
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
           />
-          <SendButton onClick={submit}></SendButton>
+          <SendButton onClick={submit}>
+            <Icon path={mdiArrowUp} size={0.8} />
+          </SendButton>
         </MessageInputLayout>
       </ContentLayout>
     </MessageLayout>

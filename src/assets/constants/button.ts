@@ -1,14 +1,50 @@
-export const button = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#"];
-export const text = [
-  ["A", "B", "C"], 
-  ["D", "E", "F"], 
-  ["G", "H", "I"], 
-  ["J", "K", "L"], 
-  ["M", "N", "O"],
-  ["P", "Q", "R", "S"],
-  ["T", "U", "V"],
-  ["W", "X", "Y", "Z"],
-  [],
-  ["+"],
-  []
+export const button = [
+  {
+    number: "1",
+    text: "",
+  },
+  {
+    number: "2",
+    text: "ABC",
+  },
+  {
+    number: "3",
+    text: "DEF",
+  },
+  {
+    number: "4",
+    text: "GHI",
+  },
+  {
+    number: "5",
+    text: "JKL",
+  },
+  {
+    number: "6",
+    text: "MNO",
+  },
+  {
+    number: "7",
+    text: "PQRS",
+  },
+  {
+    number: "8",
+    text: "TUV",
+  },
+  {
+    number: "9",
+    text: "WXYZ",
+  },
+  {
+    number: "*",
+    text: "",
+  },
+  {
+    number: "0",
+    text: "+",
+  },
+  {
+    number: "#",
+    text: "",
+  },
 ];
