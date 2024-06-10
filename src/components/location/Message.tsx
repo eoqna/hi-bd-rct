@@ -121,6 +121,10 @@ const Message = (props: CommonProps.ComponentProps) => {
     navigation("/third");
   }, [answer]);
 
+  const onKeyPressEnter = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key === "Enter") submit();
+  }, [answer]);
+
   return (
     <MessageLayout>
       <Profile>
@@ -148,6 +152,7 @@ const Message = (props: CommonProps.ComponentProps) => {
             autoFocus={true}
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
+            onKeyPress={(e) => onKeyPressEnter(e)}
           />
           <SendButton onClick={submit}>
             <Icon path={mdiArrowUp} size={0.8} />

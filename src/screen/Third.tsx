@@ -69,7 +69,7 @@ const Third = (props: CommonProps.ComponentProps) => {
       const agreeButton = document.querySelector(".agree_button") as HTMLElement;
       const rejectButton = document.querySelector(".reject_button") as HTMLElement;
 
-      rejectButton.style.display = "none";
+      rejectButton.style.height = "0";
       agreeButton.style.background = Colors.DARK.HOVER;
       agreeButton.style.color = Colors.White;
 

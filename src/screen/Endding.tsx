@@ -64,21 +64,6 @@ const Endding = (props: CommonProps.ComponentProps) => {
     navigation("/nonograms");
   }, []);
 
-  const onClickReject = useCallback(() => {
-    setTimeout(() => {
-      const agreeButton = document.querySelector(".agree_button") as HTMLElement;
-      const rejectButton = document.querySelector(".reject_button") as HTMLElement;
-
-      rejectButton.style.display = "none";
-      agreeButton.style.background = Colors.DARK.HOVER;
-      agreeButton.style.color = Colors.White;
-
-      setTimeout(() => {
-        navigation("/nonograms");
-      }, 1000);
-    }, 2000);
-  }, []);
-
   return (
     <Layout>
       <Img src={img} alt="saw" />
@@ -95,8 +80,7 @@ const Endding = (props: CommonProps.ComponentProps) => {
               약속대로 보물이 있는 위치를 알려주겠다.
             </Text>
             <ButtonLayout className="button_layout">
-              <Button $type="left" className="agree_button" onClick={onClickAgree}>위치 보기</Button>
-              <Button $type="right" className="reject_button" onClick={onClickReject}>쫄;</Button>
+              <Button $type="bar" className="agree_button" onClick={onClickAgree}>위치 보기</Button>
             </ButtonLayout>
           </TextLayout>
         </ContentLayout>

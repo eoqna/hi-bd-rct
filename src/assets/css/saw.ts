@@ -60,7 +60,7 @@ export const Button = styled.button<{ $type: string }>`
   align-items: center;
   font-size: 1vw;
   font-weight: bold;
-  width: 46%;
+  width: ${(props) => props.$type === "bar" ? "100%" : "46%"};
   height: 100%;
   border: 3px solid black;
   border-radius: 6px;
