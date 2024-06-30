@@ -8,7 +8,6 @@ import {
   Layout, Medal, Text, 
   TextLayout,
 } from "../assets/css/saw";
-import { Colors } from "../assets/css/colors";
 import { lastMedal } from "../assets/constants/medal";
 
 const Endding = (props: CommonProps.ComponentProps) => {
