@@ -8,6 +8,7 @@ import Second from "../screen/Second";
 import Third from "../screen/Third";
 import Endding from "../screen/Endding";
 import Location from "../screen/Location";
+import Rocker from "../screen/Rocker";
 
 const Layout = styled.div`
   width: 100%;
@@ -28,11 +29,12 @@ const Navigations = () => {
       <ContentLayout>
         <Routes>
           <Route index element={<Congratulation navigation={navigation} />} />
-          <Route path="start" element={<Start navigation={navigation} />}/>
+          <Route path="/start" element={<Start navigation={navigation} />}/>
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
           <Route path="/second" element={<Second navigation={navigation} />} />
           <Route path="/location" element={<Location navigation={navigation} />} />
           <Route path="/third" element={<Third navigation={navigation} />} />
+          <Route path="/rocker" element={<Rocker navigation={navigation} />} />
           <Route path="/endding" element={<Endding navigation={navigation} />} />
         </Routes>
       </ContentLayout>
