@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { Layout } from "../assets/css/common";
 import { CommonProps } from "../navigations";
 
-const Rocker = (props: CommonProps.ComponentProps) => {
+const Locker = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
 
   const submit = useCallback(() => {
@@ -16,4 +16,4 @@ const Rocker = (props: CommonProps.ComponentProps) => {
   )
 };
 
-export default Rocker;
+export default Locker;
