@@ -31,7 +31,6 @@ const Location = (props: CommonProps.ComponentProps) => {
         </Message>
         <KeyPad />
       </BackgroundLayout>
-      
     </Layout>
   );
 };

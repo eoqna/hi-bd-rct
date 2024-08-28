@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { CenterLayout } from "../../assets/css/common";
 import { Colors } from "../../assets/css/colors";
 import gameImg from "../../assets/imgs/nonograms_fake.png";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 const ContentLayout = styled.div`
   width: 80%;
@@ -29,11 +29,10 @@ const Img = styled.img`
 
 const Explanation = () => {
   const [ size, setSize ] = useState(2.8);
-  const onClickFakeImg = useCallback(() => {
-    const img = document.querySelector(".ex_img") as HTMLElement;
+  const imgRef = useRef<HTMLImageElement>(null);
 
-    img.style.transform = `scale(${size})`;
-    
+  const onClickFakeImg = useCallback(() => {
+    if (imgRef.current) imgRef.current.style.transform = `scale(${size})`;
     setSize(prev => prev === 1 ? 2.8 : 1);
   }, [size]);
 
@@ -41,7 +40,7 @@ const Explanation = () => {
     <CenterLayout>
       <ContentLayout>
         <Title>게임 예시</Title>
-        <Img className="ex_img" src={gameImg} alt="게임예시" onClick={onClickFakeImg} />
+        <Img ref={imgRef} src={gameImg} alt="게임예시" onClick={onClickFakeImg} />
       </ContentLayout>
     </CenterLayout>
   );

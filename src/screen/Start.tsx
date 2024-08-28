@@ -1,6 +1,6 @@
 import tv from "../assets/imgs/tv.gif";
 import saw from "../assets/imgs/saw.jpg";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CommonProps } from "../navigations";
 import { 
   Button, ButtonLayout, 
@@ -15,6 +15,9 @@ const Start = (props: CommonProps.ComponentProps) => {
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
   const [ text, setText ] = useState("쫄;");
+  const firstTextRef = useRef<HTMLParagraphElement>(null);
+  const secondTextRef = useRef<HTMLParagraphElement>(null);
+  const layoutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,8 +32,7 @@ const Start = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     const firstTextTimer = setTimeout(() => {
-      const firstText = document.querySelector(".first_text") as HTMLElement;
-      firstText.style.display = "block";
+      if (firstTextRef.current) firstTextRef.current.style.display = "block";
     }, 4000);
 
     return () => {
@@ -40,8 +42,7 @@ const Start = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     const secondTextTimer = setTimeout(() => {
-      const secondText = document.querySelector(".second_text") as HTMLElement;
-      secondText.style.display = "block";
+      if (secondTextRef.current) secondTextRef.current.style.display = "block";
     }, 6000);
 
     return () => {
@@ -51,8 +52,7 @@ const Start = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     const buttonLayoutTimer = setTimeout(() => {
-      const buttonLayout = document.querySelector(".button_layout") as HTMLElement;
-      buttonLayout.style.display = "flex";
+      if (layoutRef.current) layoutRef.current.style.display = "flex";
     }, 8000);
 
     return () => {
@@ -83,15 +83,15 @@ const Start = (props: CommonProps.ComponentProps) => {
             <Medal key={item.right} $right={item.right} src={item.src} alt="empty medal" />
           ))}
           <TextLayout>
-            <Text className="first_text">
+            <Text ref={firstTextRef}>
               금메달 3개를 모으면 보물이 있는 위치를 알려주도록하지.
             </Text>
-            <Text className="second_text">
+            <Text ref={secondTextRef}>
               쫄?
             </Text>
-            <ButtonLayout className="button_layout">
-              <Button $type="left" onClick={onClickAgree}>?</Button>
-              <Button $type="right" onClick={onClickReject}>{text}</Button>
+            <ButtonLayout ref={layoutRef}>
+              <Button onClick={onClickAgree}>?</Button>
+              <Button onClick={onClickReject}>{text}</Button>
             </ButtonLayout>
           </TextLayout>
         </ContentLayout>

@@ -1,6 +1,6 @@
 import tv from "../assets/imgs/tv.gif";
 import saw from "../assets/imgs/saw.jpg";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CommonProps } from "../navigations";
 import { 
   Button, ButtonLayout, 
@@ -15,6 +15,11 @@ const Second = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
+  const firstTextRef = useRef<HTMLParagraphElement>(null);
+  const secondTextRef = useRef<HTMLParagraphElement>(null);
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const agreeBtnRef = useRef<HTMLButtonElement>(null);
+  const rejectBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,8 +34,7 @@ const Second = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     const firstTextTimer = setTimeout(() => {
-      const firstText = document.querySelector(".first_text") as HTMLElement;
-      firstText.style.display = "block";
+      if (firstTextRef.current) firstTextRef.current.style.display = "block";
     }, 4000);
 
     return () => {
@@ -40,8 +44,7 @@ const Second = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     const secondTextTimer = setTimeout(() => {
-      const secondText = document.querySelector(".second_text") as HTMLElement;
-      secondText.style.display = "block";
+      if (secondTextRef.current) secondTextRef.current.style.display = "block";
     }, 6000);
 
     return () => {
@@ -51,8 +54,7 @@ const Second = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     const buttonLayoutTimer = setTimeout(() => {
-      const buttonLayout = document.querySelector(".button_layout") as HTMLElement;
-      buttonLayout.style.display = "flex";
+      if (layoutRef.current) layoutRef.current.style.display = "flex"
     }, 8000);
 
     return () => {
@@ -66,13 +68,11 @@ const Second = (props: CommonProps.ComponentProps) => {
 
   const onClickReject = useCallback(() => {
     setTimeout(() => {
-      const agreeButton = document.querySelector(".agree_button") as HTMLElement;
-      const rejectButton = document.querySelector(".reject_button") as HTMLElement;
-
-      rejectButton.style.display = "none";
-      agreeButton.style.background = Colors.DARK.HOVER;
-      agreeButton.style.color = Colors.White;
-
+      if( agreeBtnRef.current && rejectBtnRef.current ) {
+        rejectBtnRef.current.style.display = "none";
+        agreeBtnRef.current.style.background = Colors.DARK.HOVER;
+        agreeBtnRef.current.style.color = Colors.White;
+      }
       setTimeout(() => {
         navigation("/location");
       }, 1000);
@@ -88,15 +88,15 @@ const Second = (props: CommonProps.ComponentProps) => {
             <Medal key={item.right} $right={item.right} src={item.src} alt="empty medal" />
           ))}
           <TextLayout>
-            <Text className="first_text">
+            <Text ref={firstTextRef}>
               첫 번째 문제를 용케도 풀어냈군. 칭찬해주지
             </Text>
-            <Text className="second_text">
+            <Text ref={secondTextRef}>
               두 번째 게임을 시작하지, 준비됐나?
             </Text>
-            <ButtonLayout className="button_layout">
-              <Button $type="left" className="agree_button" onClick={onClickAgree}>좋다</Button>
-              <Button $type="right" className="reject_button" onClick={onClickReject}>싫다</Button>
+            <ButtonLayout ref={layoutRef}>
+              <Button ref={agreeBtnRef} onClick={onClickAgree}>좋다</Button>
+              <Button ref={rejectBtnRef} onClick={onClickReject}>싫다</Button>
             </ButtonLayout>
           </TextLayout>
         </ContentLayout>

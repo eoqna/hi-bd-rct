@@ -54,13 +54,13 @@ export const ButtonLayout = styled.div`
   height: 30%;
 `;
 
-export const Button = styled.button<{ $type: string }>`
+export const Button = styled.button<{ $type?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1vw;
   font-weight: bold;
-  width: ${(props) => props.$type === "bar" ? "100%" : "46%"};
+  width: ${(props) => props.$type ? "100%" : "46%"};
   height: 100%;
   border: 3px solid black;
   border-radius: 6px;

@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { CommonProps } from "../navigations";
 import image1 from "../assets/imgs/leaveMouse.png";
 import image2 from "../assets/imgs/enterMouse.jpg";
@@ -12,16 +12,18 @@ import {
 
 const Congratulation = (props: CommonProps.ComponentProps) => {
   const { navigation } = props;
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const imgTextRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     scaleUp();
   }, []);
 
   const scaleUp = useCallback(() => {
-    const text = document.querySelector(".title-layout") as HTMLElement;
-
-    text.style.transition = "all 1.3s ease-in";
-    text.style.transform = "scale(1)";
+    if( layoutRef.current ) {
+      layoutRef.current.style.transition = "all 1.3s ease-in";
+      layoutRef.current.style.transform = "scale(1)";
+    }
   }, []);
 
   const onClickImg = useCallback(() => {
@@ -29,21 +31,18 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onMouseEnterImg = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
-    const imgText = document.querySelector(".img-text") as HTMLElement;
-
-    imgText.style.display = "block";
+    if( imgTextRef.current ) imgTextRef.current.style.display = "block";
     e.currentTarget.src = image2;
   }, []);
   
   const onMouseLeaveImg = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
-    const imgText = document.querySelector(".img-text") as HTMLElement;
-    imgText.style.display = "none";
+    if( imgTextRef.current ) imgTextRef.current.style.display = "none";
     e.currentTarget.src = image1;
   }, []);
 
   return (
     <Layout>
-      <ContentLayout className="title-layout">
+      <ContentLayout ref={layoutRef}>
         <TextLayout>
           {top.map((item) => (
             <Text key={item.text} $color={item.color} $text={item.text}>{item.text}</Text>
@@ -57,7 +56,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
             onMouseLeave={(e) => onMouseLeaveImg(e)} 
             onClick={onClickImg} 
           />
-          <ImgText className="img-text">Click Me !</ImgText>
+          <ImgText ref={imgTextRef}>Click Me !</ImgText>
         </ImgLayout>
         <TextLayout>
           {bottom.map((item) => (

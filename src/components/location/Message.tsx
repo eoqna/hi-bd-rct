@@ -112,17 +112,13 @@ const Message = (props: CommonProps.ComponentProps) => {
   const answerRef = useRef<HTMLInputElement>(null);
 
   const submit = useCallback(() => {
-    if( answer.toUpperCase() !== "LOTTE MART") {
+    if (answer.toUpperCase() !== "LOTTE MART") {
       setAnswer("");
       answerRef.current?.focus();
       return;
     }
 
     navigation("/third");
-  }, [answer]);
-
-  const onKeyPressEnter = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
-    if(e.key === "Enter") submit();
   }, [answer]);
 
   return (
@@ -152,7 +148,6 @@ const Message = (props: CommonProps.ComponentProps) => {
             autoFocus={true}
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
-            onKeyPress={(e) => onKeyPressEnter(e)}
           />
           <SendButton onClick={submit}>
             <Icon path={mdiArrowUp} size={0.8} />
