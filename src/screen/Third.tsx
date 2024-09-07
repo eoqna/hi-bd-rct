@@ -84,8 +84,8 @@ const Third = (props: CommonProps.ComponentProps) => {
       <Img src={img} alt="saw" />
       {show &&
         <ContentLayout>
-          {thirdMedal.map((item) => (
-            <Medal key={item.right} $right={item.right} src={item.src} alt="empty medal" />
+          {thirdMedal.map((medal) => (
+            <Medal key={medal.right} $right={medal.right} src={medal.src} alt="gold medal" />
           ))}
           <TextLayout>
             <Text ref={firstTextRef}>

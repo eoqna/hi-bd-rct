@@ -44,13 +44,13 @@ const English = styled.p`
 const KeyPad = () => {
   return (
     <ButtonLayout>
-      {button.map((v, i) => (
-        <Button key={i}>
+      {button.map((btn) => (
+        <Button key={btn.number}>
           <Number>
-            {v.number}
+            {btn.number}
           </Number>
           <TextLayout>
-            <English>{v.text}</English>
+            <English>{btn.text}</English>
           </TextLayout>
         </Button>
       ))}

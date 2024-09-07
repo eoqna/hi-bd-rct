@@ -175,12 +175,12 @@ const Game = (props: CommonProps.ComponentProps) => {
           <tbody>
             {tableData.map((tr, idx) => (
               <Tr key={`tr__${idx}`}>
-                {tr.map((td, index) => (
+                {tr.map((td, i) => (
                   <Td 
-                    key={`td__${index}`} 
+                    key={`td__${i}`} 
                     $clicked={td} 
-                    onClick={() => onClickColumn(idx, index, td)}
-                    onContextMenu={(e) => onRightClickColumn(e, idx, index, td)}
+                    onClick={() => onClickColumn(idx, i, td)}
+                    onContextMenu={(e) => onRightClickColumn(e, idx, i, td)}
                   >
                     {td}
                   </Td>

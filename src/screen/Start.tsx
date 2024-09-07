@@ -79,8 +79,8 @@ const Start = (props: CommonProps.ComponentProps) => {
       <Img src={img} alt="saw" />
       {show &&
         <ContentLayout>
-          {firstMedal.map((item) => (
-            <Medal key={item.right} $right={item.right} src={item.src} alt="empty medal" />
+          {firstMedal.map((medal) => (
+            <Medal key={medal.right} $right={medal.right} src={medal.src} alt="gold medal" />
           ))}
           <TextLayout>
             <Text ref={firstTextRef}>
