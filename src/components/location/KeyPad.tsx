@@ -55,7 +55,7 @@ const KeyPad = () => {
         </Button>
       ))}
     </ButtonLayout>
-  )
+  );
 };
 
 export default KeyPad;

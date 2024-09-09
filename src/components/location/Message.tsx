@@ -155,7 +155,7 @@ const Message = (props: CommonProps.ComponentProps) => {
         </MessageInputLayout>
       </ContentLayout>
     </MessageLayout>
-  )
+  );
 };
 
 export default Message;

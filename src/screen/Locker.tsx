@@ -13,7 +13,7 @@ const Locker = (props: CommonProps.ComponentProps) => {
     <Layout>
 
     </Layout>
-  )
+  );
 };
 
 export default Locker;
