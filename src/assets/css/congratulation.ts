@@ -27,13 +27,13 @@ export const TextLayout = styled.div`
   align-items: center;
 `;
 
-export const Text = styled.span<{ $color: string, $text: string }>`
+export const Text = styled.span<{ $color: string, text?: boolean }>`
   font-size: 5vw;
   font-weight: bold;
-  color: ${(props) => props.$color};
-  margin-right: ${(props) => props.$text === "의" && "20px"};
+  color: ${({ $color }) => $color};
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: ${Colors.Black};
+  ${({ text }) => text && "margin-right: 20px;"}
 `;
 
 export const ImgLayout = styled.div`

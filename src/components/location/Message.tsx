@@ -52,20 +52,20 @@ const MessageBoxLayout = styled.div`
   flex-direction: column;
 `;
 
-const MessageBox = styled.div<{ $type: string }>`
+const MessageBox = styled.div<{ send?: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: ${(props) => props.$type === "send" ? "end" : "start"};
+  align-items: ${({ send }) => send ? "end" : "start"};
   margin-bottom: 0.3vw;
 `;
 
-const Text = styled.p<{ $type: string }>`
+const Text = styled.p<{ send?: boolean }>`
   width: fit-content;
   font-size: 1vw;
   font-weight: bold;
   color: ${Colors.White};
-  background: ${(props) => props.$type === "send" ? "#0B83FE" : "#aaa"};
+  background: ${({ send }) => send ? "#0B83FE" : "#aaa"};
   padding: 0.5vw;
   border-radius: 0.5vw;
 `;
@@ -129,13 +129,13 @@ const Message = (props: CommonProps.ComponentProps) => {
       </Profile>
       <ContentLayout>
         <MessageBoxLayout>
-          <MessageBox $type="send">
-            <Text $type="send">
+          <MessageBox send>
+            <Text send>
               장소는?
             </Text>
           </MessageBox>
-          <MessageBox $type="receive">
-            <Text $type="receive">
+          <MessageBox>
+            <Text>
               568836278<br/>
               331121131
             </Text>

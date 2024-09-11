@@ -54,13 +54,13 @@ export const ButtonLayout = styled.div`
   height: 30%;
 `;
 
-export const Button = styled.button<{ $type?: boolean }>`
+export const Button = styled.button<{ fill?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1vw;
   font-weight: bold;
-  width: ${(props) => props.$type ? "100%" : "46%"};
+  width: ${({ fill }) => fill ? "100%" : "46%"};
   height: 100%;
   border: 3px solid black;
   border-radius: 6px;
@@ -81,7 +81,7 @@ export const Medal = styled.img<{ $right: number }>`
   position: absolute;
   top: 1vh;
   background: ${Colors.Background};
-  right: ${(props) => props.$right}px;
+  right: ${({ $right }) => $right}px;
   width: 70px;
   height: 70px;
 `;

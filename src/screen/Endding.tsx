@@ -79,7 +79,7 @@ const Endding = (props: CommonProps.ComponentProps) => {
               약속대로 보물이 있는 위치를 알려주겠다.
             </Text>
             <ButtonLayout ref={layoutRef}>
-              <Button $type className="agree_button" onClick={onClickAgree}>위치 보기</Button>
+              <Button fill className="agree_button" onClick={onClickAgree}>위치 보기</Button>
             </ButtonLayout>
           </TextLayout>
         </ContentLayout>

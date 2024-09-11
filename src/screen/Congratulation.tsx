@@ -45,7 +45,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
       <ContentLayout ref={layoutRef}>
         <TextLayout>
           {top.map((item) => (
-            <Text key={item.text} $color={item.color} $text={item.text}>{item.text}</Text>
+            <Text key={item.text} $color={item.color} text={item.text === "의" ? true : false}>{item.text}</Text>
           ))}
         </TextLayout>
         <ImgLayout>
@@ -60,7 +60,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
         </ImgLayout>
         <TextLayout>
           {bottom.map((item) => (
-            <Text key={item.text} $color={item.color} $text={item.text}>{item.text}</Text>
+            <Text key={item.text} $color={item.color} text={item.text === "의" ? true : false}>{item.text}</Text>
           ))}
         </TextLayout>
       </ContentLayout>
