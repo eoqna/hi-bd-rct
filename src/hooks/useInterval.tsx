@@ -1,30 +1,30 @@
 import { useEffect, useRef } from 'react'
 import { useIsomorphicLayoutEffect } from 'usehooks-ts'
 
-const useInterval = (callback: () => void, delay: number | null) => {
-  const savedCallback = useRef(callback)
+const useInterval = (cb: () => void, delay: number | null) => {
+  const savedCallback = useRef(cb);
 
   // Remember the latest callback if it changes.
   useIsomorphicLayoutEffect(() => {
-    savedCallback.current = callback
-  }, [callback])
+    savedCallback.current = cb;
+  }, [cb]);
 
   // Set up the interval.
   useEffect(() => {
     // Don't schedule if no delay is specified.
     // Note: 0 is a valid value for delay.
     if (delay === null) {
-      return
+      return;
     }
 
     const id = setInterval(() => {
-      savedCallback.current()
-    }, delay)
+      savedCallback.current();
+    }, delay);
 
     return () => {
-      clearInterval(id)
+      clearInterval(id);
     }
-  }, [delay])
+  }, [delay]);
 };
 
 export default useInterval;

@@ -138,7 +138,7 @@ const Game = (props: CommonProps.ComponentProps) => {
     });
   }, [tableData]);
 
-  const onRightClickColumn = useCallback((e: React.MouseEvent<HTMLTableDataCellElement>, rowIndex: number, cellIndex: number, data: string) => {
+  const onRightClickColumn = useCallback((e: React.MouseEvent, rowIndex: number, cellIndex: number, data: string) => {
     e.preventDefault();
 
     setTableData(prevArray => {
