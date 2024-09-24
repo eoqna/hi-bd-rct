@@ -4,10 +4,8 @@ import image1 from "../assets/imgs/leaveMouse.png";
 import image2 from "../assets/imgs/enterMouse.jpg";
 import { bottom, top } from "../assets/constants/title";
 import { 
-  ContentLayout,
-  Img, ImgLayout, 
-  ImgText, Layout, 
-  Text, TextLayout 
+  ContentLayout, Img, ImgLayout, 
+  ImgText, Layout, Text, TextLayout 
 } from "../assets/css/congratulation";
 
 const Congratulation = (props: CommonProps.ComponentProps) => {
@@ -20,7 +18,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const scaleUp = useCallback(() => {
-    if( layoutRef.current ) {
+    if (layoutRef.current) {
       layoutRef.current.style.transition = "all 1.3s ease-in";
       layoutRef.current.style.transform = "scale(1)";
     }
@@ -31,12 +29,12 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onMouseEnterImg = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
-    if( imgTextRef.current ) imgTextRef.current.style.display = "block";
+    if (imgTextRef.current) imgTextRef.current.style.display = "block";
     e.currentTarget.src = image2;
   }, []);
   
   const onMouseLeaveImg = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
-    if( imgTextRef.current ) imgTextRef.current.style.display = "none";
+    if (imgTextRef.current) imgTextRef.current.style.display = "none";
     e.currentTarget.src = image1;
   }, []);
 
