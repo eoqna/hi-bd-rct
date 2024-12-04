@@ -12,9 +12,7 @@ const Layout = styled.div`
   flex-direction: column;
 `;
 
-const Nonograms = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
-
+const Nonograms = ({ navigation }: CommonProps.ComponentProps) => {
   return (
     <Layout>
       <Summary />

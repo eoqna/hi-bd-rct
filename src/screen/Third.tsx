@@ -11,8 +11,7 @@ import {
 import { Colors } from "../assets/css/colors";
 import { thirdMedal } from "../assets/constants/medal";
 
-const Third = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
+const Third = ({ navigation }: CommonProps.ComponentProps) => {
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
   const firstTextRef = useRef<HTMLParagraphElement>(null);
@@ -89,13 +88,13 @@ const Third = (props: CommonProps.ComponentProps) => {
           ))}
           <TextLayout>
             <Text ref={firstTextRef}>
-              이제 마지막 문제만 남았다.
+              오호~ 꽤 잘 푸는데?
             </Text>
             <Text ref={secondTextRef}>
-              그럼 마지막 문제를 시작하도록 하지.
+              그럼 마지막 문제를 시작하도록 하지
             </Text>
             <ButtonLayout ref={layoutRef}>
-              <Button ref={agreeBtnRef} className="agree_button" onClick={onClickAgree}>좋다</Button>
+              <Button ref={agreeBtnRef} className="agree_button" onClick={onClickAgree}>그래!</Button>
               <Button ref={rejectBtnRef} className="reject_button" onClick={onClickReject}>그만할래..</Button>
             </ButtonLayout>
           </TextLayout>

@@ -11,8 +11,7 @@ import {
 import { Colors } from "../assets/css/colors";
 import { secondMedal } from "../assets/constants/medal";
 
-const Second = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
+const Second = ({ navigation }: CommonProps.ComponentProps) => {
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
   const firstTextRef = useRef<HTMLParagraphElement>(null);
@@ -63,7 +62,7 @@ const Second = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickAgree = useCallback(() => {
-    navigation("/location");
+    navigation("/message");
   }, []);
 
   const onClickReject = useCallback(() => {
@@ -74,7 +73,7 @@ const Second = (props: CommonProps.ComponentProps) => {
         agreeBtnRef.current.style.color = Colors.White;
       }
       setTimeout(() => {
-        navigation("/location");
+        navigation("/message");
       }, 1000);
     }, 2000);
   }, []);
@@ -89,10 +88,10 @@ const Second = (props: CommonProps.ComponentProps) => {
           ))}
           <TextLayout>
             <Text ref={firstTextRef}>
-              첫 번째 문제를 용케도 풀어냈군. 칭찬해주지
+              쉬운 문제인데 이렇게나 오래 걸리다니...
             </Text>
             <Text ref={secondTextRef}>
-              두 번째 게임을 시작하지, 준비됐나?
+              시간이 없으니 바로 두 번째 게임을 시작하도록 하지
             </Text>
             <ButtonLayout ref={layoutRef}>
               <Button ref={agreeBtnRef} onClick={onClickAgree}>좋다</Button>

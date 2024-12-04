@@ -38,6 +38,7 @@ export const Text = styled.span<{ $color: string, text?: boolean }>`
 
 export const ImgLayout = styled.div`
   position: relative;
+  cursor: pointer;
 `;
 
 export const Img = styled.img`
@@ -53,6 +54,6 @@ export const ImgText = styled.p`
   bottom: calc(4vh + 10px);
   font-size: 2vmin;
   font-weight: bold;
-  color: ${Colors.Black};
+  color: ${Colors.White};
   z-index: 1000;
 `;

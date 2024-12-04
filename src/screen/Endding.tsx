@@ -10,8 +10,7 @@ import {
 } from "../assets/css/saw";
 import { lastMedal } from "../assets/constants/medal";
 
-const Endding = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
+const Endding = ({ navigation }: CommonProps.ComponentProps) => {
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
   const firstTextRef = useRef<HTMLParagraphElement>(null);
@@ -60,7 +59,7 @@ const Endding = (props: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickAgree = useCallback(() => {
-    navigation("/nonograms");
+    
   }, []);
 
   return (
@@ -73,10 +72,10 @@ const Endding = (props: CommonProps.ComponentProps) => {
           ))}
           <TextLayout>
             <Text ref={firstTextRef}>
-              모든 문제를 풀어내다니 대단하구나.
+              모든 문제를 풀어내다니 대단하구나
             </Text>
             <Text ref={secondTextRef}>
-              약속대로 보물이 있는 위치를 알려주겠다.
+              약속대로 보물이 있는 위치를 알려주겠다
             </Text>
             <ButtonLayout ref={layoutRef}>
               <Button fill className="agree_button" onClick={onClickAgree}>위치 보기</Button>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { CommonProps } from "../navigations";
 import { Colors } from "../assets/css/colors";
-import Message from "../components/location/Message";
-import KeyPad from "../components/location/KeyPad";
+import Message from "../components/place/Message";
+import KeyPad from "../components/place/KeyPad";
 
 const Layout = styled.div`
   width: 100%;
@@ -21,9 +21,7 @@ const BackgroundLayout = styled.div`
   background: ${Colors.LightGray};
 `;
 
-const Location = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
-  
+const Place = ({ navigation }: CommonProps.ComponentProps) => {
   return (
     <Layout>
       <BackgroundLayout>
@@ -35,4 +33,4 @@ const Location = (props: CommonProps.ComponentProps) => {
   );
 };
 
-export default Location;
+export default Place;

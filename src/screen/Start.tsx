@@ -10,11 +10,10 @@ import {
 } from "../assets/css/saw";
 import { firstMedal } from "../assets/constants/medal";
 
-const Start = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
+const Start = ({ navigation }: CommonProps.ComponentProps) => {
   const [ img, setImg ] = useState(tv);
   const [ show, setShow ] = useState(false);
-  const [ text, setText ] = useState("쫄;");
+  const [ text, setText ] = useState("ㄴㄴ");
   const firstTextRef = useRef<HTMLParagraphElement>(null);
   const secondTextRef = useRef<HTMLParagraphElement>(null);
   const layoutRef = useRef<HTMLDivElement>(null);
@@ -66,7 +65,7 @@ const Start = (props: CommonProps.ComponentProps) => {
 
   const onClickReject = useCallback(() => {
     setTimeout(() => {
-      setText("거절은 거절.");
+      setText("Impossible is Nothing");
 
       setTimeout(() => {
         navigation("/nonograms");
@@ -84,13 +83,13 @@ const Start = (props: CommonProps.ComponentProps) => {
           ))}
           <TextLayout>
             <Text ref={firstTextRef}>
-              금메달 3개를 모으면 보물이 있는 위치를 알려주도록하지.
+              금메달 3개를 모으면 보물이 있는 위치를 알려주도록 하지,
             </Text>
             <Text ref={secondTextRef}>
-              쫄?
+              도전?
             </Text>
             <ButtonLayout ref={layoutRef}>
-              <Button onClick={onClickAgree}>?</Button>
+              <Button onClick={onClickAgree}>ㄱㄱ</Button>
               <Button onClick={onClickReject}>{text}</Button>
             </ButtonLayout>
           </TextLayout>

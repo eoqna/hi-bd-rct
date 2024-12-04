@@ -159,7 +159,7 @@ const Game = (props: CommonProps.ComponentProps) => {
 
   useEffect(() => {
     if( JSON.stringify(tableData) === JSON.stringify(catAnswer) ) {
-      setResult("정답!");
+      setResult("정답일까?");
     }
 
     if( JSON.stringify(tableData) === JSON.stringify(realAnswer) ) {

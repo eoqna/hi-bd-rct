@@ -7,8 +7,8 @@ import Start from "../screen/Start";
 import Second from "../screen/Second";
 import Third from "../screen/Third";
 import Endding from "../screen/Endding";
-import Location from "../screen/Location";
-import Locker from "../screen/Locker";
+import Place from "../screen/Place";
+import Card from "../screen/Card";
 
 const Layout = styled.div`
   width: 100%;
@@ -32,9 +32,9 @@ const Navigations = () => {
           <Route path="/start" element={<Start navigation={navigation} />}/>
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
           <Route path="/second" element={<Second navigation={navigation} />} />
-          <Route path="/location" element={<Location navigation={navigation} />} />
+          <Route path="/message" element={<Place navigation={navigation} />} />
           <Route path="/third" element={<Third navigation={navigation} />} />
-          <Route path="/locker" element={<Locker navigation={navigation} />} />
+          <Route path="/card" element={<Card navigation={navigation} />} />
           <Route path="/endding" element={<Endding navigation={navigation} />} />
         </Routes>
       </ContentLayout>

@@ -1,15 +1,14 @@
 import { useCallback, useEffect, useRef } from "react";
 import { CommonProps } from "../navigations";
-import image1 from "../assets/imgs/leaveMouse.png";
-import image2 from "../assets/imgs/enterMouse.jpg";
+import image1 from "../assets/imgs/before.jpg";
+import image2 from "../assets/imgs/after.jpg";
 import { bottom, top } from "../assets/constants/title";
 import { 
   ContentLayout, Img, ImgLayout, 
   ImgText, Layout, Text, TextLayout 
 } from "../assets/css/congratulation";
 
-const Congratulation = (props: CommonProps.ComponentProps) => {
-  const { navigation } = props;
+const Congratulation = ({ navigation }: CommonProps.ComponentProps) => {
   const layoutRef = useRef<HTMLDivElement>(null);
   const imgTextRef = useRef<HTMLImageElement>(null);
 
@@ -54,7 +53,7 @@ const Congratulation = (props: CommonProps.ComponentProps) => {
             onMouseLeave={(e) => onMouseLeaveImg(e)} 
             onClick={onClickImg} 
           />
-          <ImgText ref={imgTextRef}>Click Me !</ImgText>
+          <ImgText ref={imgTextRef}>화면을 클릭하세요</ImgText>
         </ImgLayout>
         <TextLayout>
           {bottom.map((item) => (

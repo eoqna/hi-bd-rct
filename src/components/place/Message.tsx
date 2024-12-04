@@ -112,7 +112,7 @@ const Message = (props: CommonProps.ComponentProps) => {
   const answerRef = useRef<HTMLInputElement>(null);
 
   const submit = useCallback(() => {
-    if (answer.toUpperCase() !== "LOTTE MART") {
+    if (answer.toUpperCase() !== "CAR TRUNK") {
       setAnswer("");
       answerRef.current?.focus();
       return;
@@ -136,8 +136,8 @@ const Message = (props: CommonProps.ComponentProps) => {
           </MessageBox>
           <MessageBox>
             <Text>
-              568836278<br/>
-              331121131
+              22787865<br/>
+              31313222
             </Text>
           </MessageBox>
         </MessageBoxLayout>
