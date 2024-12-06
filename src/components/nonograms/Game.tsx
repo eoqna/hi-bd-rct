@@ -149,7 +149,7 @@ const Game = (props: CommonProps.ComponentProps) => {
   }, [tableData]);
 
   const onClickClearButton = useCallback(() => {
-    const result = confirm("엥? 진짜?");
+    const result = confirm("진짜?");
 
     if( result ) {
       setTableData(init);

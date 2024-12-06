@@ -9,6 +9,7 @@ import Third from "../screen/Third";
 import Endding from "../screen/Endding";
 import Place from "../screen/Place";
 import Card from "../screen/Card";
+import OnePiece from "../screen/OnePiece";
 
 const Layout = styled.div`
   width: 100%;
@@ -28,7 +29,8 @@ const Navigations = () => {
     <Layout>
       <ContentLayout>
         <Routes>
-          <Route index element={<Congratulation navigation={navigation} />} />
+          <Route index element={<OnePiece navigation={navigation} />} />
+          <Route path="/congratulation" element={<Congratulation navigation={navigation} />} />
           <Route path="/start" element={<Start navigation={navigation} />}/>
           <Route path="/nonograms" element={<Nonograms navigation={navigation} />} />
           <Route path="/second" element={<Second navigation={navigation} />} />

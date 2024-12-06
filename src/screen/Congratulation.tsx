@@ -53,7 +53,7 @@ const Congratulation = ({ navigation }: CommonProps.ComponentProps) => {
             onMouseLeave={(e) => onMouseLeaveImg(e)} 
             onClick={onClickImg} 
           />
-          <ImgText ref={imgTextRef}>화면을 클릭하세요</ImgText>
+          <ImgText ref={imgTextRef}>클릭</ImgText>
         </ImgLayout>
         <TextLayout>
           {bottom.map((item) => (
