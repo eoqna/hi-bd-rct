@@ -62,18 +62,18 @@ const Third = ({ navigation }: CommonProps.ComponentProps) => {
   }, []);
 
   const onClickAgree = useCallback(() => {
-    navigation("/locker");
+    navigation("/card");
   }, []);
 
   const onClickReject = useCallback(() => {
     setTimeout(() => {
-      if( agreeBtnRef.current && rejectBtnRef.current ) {
+      if (agreeBtnRef.current && rejectBtnRef.current) {
         rejectBtnRef.current.style.height = "0";
         agreeBtnRef.current.style.background = Colors.DARK.HOVER;
         agreeBtnRef.current.style.color = Colors.White;
       }
       setTimeout(() => {
-        navigation("/locker");
+        navigation("/card");
       }, 1000);
     }, 2000);
   }, []);

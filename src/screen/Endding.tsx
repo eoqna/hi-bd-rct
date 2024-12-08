@@ -75,7 +75,7 @@ const Endding = ({ navigation }: CommonProps.ComponentProps) => {
               모든 문제를 풀어내다니 대단하구나
             </Text>
             <Text ref={secondTextRef}>
-              약속대로 보물이 있는 위치를 알려주겠다
+              
             </Text>
             <ButtonLayout ref={layoutRef}>
               <Button fill className="agree_button" onClick={onClickAgree}>위치 보기</Button>

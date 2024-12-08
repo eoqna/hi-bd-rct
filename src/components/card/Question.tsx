@@ -28,7 +28,7 @@ const Input = styled.input`
 
 const Question = ({ navigation }: CommonProps.ComponentProps) => {
   const onChangeText = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    if(e.target.value === "4769") {
+    if (e.target.value === "4769") {
       navigation("/endding");
     }
   }, []);

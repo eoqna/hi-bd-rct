@@ -9,6 +9,8 @@ interface ModalState {
 interface DataState {
   modal: ModalState;
   openModal: (data: ModalState) => void;
+  isPlaying: boolean;
+  setIsPlaying: (data: boolean) => void;
 };
 
 export const defaultModalState: ModalState = {
@@ -20,6 +22,8 @@ export const defaultModalState: ModalState = {
 const useAppStore = create<DataState>()((set) => ({
   modal: defaultModalState,
   openModal: (data) => set({ modal: data }),
+  isPlaying: false,
+  setIsPlaying: (data) => set({ isPlaying: data }),
 }));
 
 export default useAppStore;

@@ -67,7 +67,7 @@ const Second = ({ navigation }: CommonProps.ComponentProps) => {
 
   const onClickReject = useCallback(() => {
     setTimeout(() => {
-      if( agreeBtnRef.current && rejectBtnRef.current ) {
+      if (agreeBtnRef.current && rejectBtnRef.current) {
         rejectBtnRef.current.style.display = "none";
         agreeBtnRef.current.style.background = Colors.DARK.HOVER;
         agreeBtnRef.current.style.color = Colors.White;
